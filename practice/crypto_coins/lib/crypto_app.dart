@@ -8,6 +8,7 @@ class CryptoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Crypto app',
       routes: routes,
       theme: darkTheme,
