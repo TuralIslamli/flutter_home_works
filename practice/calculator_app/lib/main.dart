@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   double? result;
 
   calculate() {
-    print("calculate method");
+    debugPrint("calculate method");
   }
 
   @override
