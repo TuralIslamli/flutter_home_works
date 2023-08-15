@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:products/models/product_model.dart';
 import 'package:products/services/api_requests.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -19,19 +23,28 @@ class _MyAppState extends State<MyApp> {
     })();
     return MaterialApp(
       home: Scaffold(
-          body: ListView.builder(
-        itemCount: products.length,
-        itemBuilder: (context, index) {
-          return Container(
-            margin: const EdgeInsets.only(bottom: 20),
-            child: Column(children: [
-              Text("Title: ${products[index].title}"),
-              Image.network(products[index].image!),
-              Text("Price: ${products[index].price}"),
-            ]),
-          );
-        },
-      )),
+          appBar: AppBar(
+            title: const Text("Products"),
+          ),
+          body: Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: products.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Column(children: [
+                        Text("Title: ${products[index].title}"),
+                        Image.network(products[index].image),
+                        Text("Price: ${products[index].price}"),
+                      ]),
+                    );
+                  },
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
