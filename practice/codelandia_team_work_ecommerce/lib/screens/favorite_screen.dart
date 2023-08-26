@@ -1,9 +1,7 @@
-import 'package:codelandia_team_work_ecommerce/get_x/state/cart_list_get_x.dart';
 import 'package:codelandia_team_work_ecommerce/get_x/state/favorite_list_get_x.dart';
 import 'package:codelandia_team_work_ecommerce/get_x/state/product_list_get_x.dart';
 import 'package:codelandia_team_work_ecommerce/hive/favorite_list_hive.dart';
 import 'package:codelandia_team_work_ecommerce/screens/product_screen.dart';
-import 'package:codelandia_team_work_ecommerce/service/model/products_model.dart';
 import 'package:codelandia_team_work_ecommerce/utilities/constants/category_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -24,13 +22,8 @@ class FavoriteScreen extends StatefulWidget {
 class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
-    CartList cartListController = Get.put(CartList());
     ProductList productListController = Get.put(ProductList());
     FavoriteList favoriteListController = Get.put(FavoriteList());
-
-    List<Product> favoriteList = productListController.productListGetX
-        .where((e) => favoriteListController.favoriteList.contains(e.id))
-        .toList();
 
     return Scaffold(
       appBar: AppBar(

@@ -1,4 +1,3 @@
-import 'package:codelandia_team_work_ecommerce/get_x/state/category_filter_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

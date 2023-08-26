@@ -1,4 +1,3 @@
-import 'package:codelandia_team_work_ecommerce/get_x/state/favorite_list_get_x.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
