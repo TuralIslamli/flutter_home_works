@@ -15,17 +15,25 @@ class HeaderWidget extends StatelessWidget {
           "${getdate(dt)["formattedDate"]}",
           style: TextStyle(
             fontSize: 18,
-            color: Colors.grey[700],
+            // color: Colors.grey[700],
             height: 1.5,
           ),
         ),
-        Text(
-          city,
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.blue[400],
-            fontWeight: FontWeight.w600,
-          ),
+        Row(
+          children: [
+            Icon(
+              Icons.location_pin,
+              color: Colors.blue[400],
+            ),
+            Text(
+              city,
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.blue[400],
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
         )
       ]),
     );

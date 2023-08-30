@@ -3,11 +3,18 @@
 class MainWeatherInfo {
   double? temp;
   double? feelsLike;
+  double? tempMin;
+  double? tempMax;
+  int? humidity;
+  int? pressure;
 
   MainWeatherInfo.fromJson(Map<String, dynamic> json) {
-    // print("MainWeatherInfo.fromJson");
     temp = json["temp"];
-    feelsLike = json["feelsLike"];
+    feelsLike = json["feels_like"];
+    tempMin = json["temp_min"];
+    tempMax = json["temp_max"];
+    humidity = json["humidity"];
+    pressure = json["pressure"];
   }
 }
 
@@ -15,7 +22,6 @@ class WindInfo {
   num? speed;
 
   WindInfo.fromJson(Map<String, dynamic> json) {
-    // print("WindInfo.fromJson");
     speed = json["speed"];
   }
 }
@@ -24,8 +30,6 @@ class CloudsInfo {
   int? all;
 
   CloudsInfo.fromJson(Map<String, dynamic> json) {
-    // print("CloudsInfo.fromJson");
-
     all = json["all"];
   }
 }
@@ -40,22 +44,32 @@ class WeatherInfo {
   }
 }
 
+class SysInfo {
+  int? sunrise;
+  int? sunset;
+
+  SysInfo.fromJson(Map<String, dynamic> json) {
+    sunrise = json["sunrise"];
+    sunset = json["sunset"];
+  }
+}
+
 class WeatherModel {
   WeatherInfo? weather;
   String? name;
   MainWeatherInfo? main;
   WindInfo? wind;
   CloudsInfo? clouds;
+  SysInfo? sys;
   int? dt;
 
   WeatherModel.fromJson(Map<String, dynamic> json) {
-    // print("WeatherModel.fromJson");
-
     weather = WeatherInfo.fromJson(json["weather"][0]);
     name = json["name"];
     main = MainWeatherInfo.fromJson(json["main"]);
     wind = WindInfo.fromJson(json["wind"]);
     clouds = CloudsInfo.fromJson(json["clouds"]);
+    sys = SysInfo.fromJson(json["sys"]);
     dt = json["dt"];
   }
 }

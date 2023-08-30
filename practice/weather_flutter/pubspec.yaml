@@ -63,8 +63,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/images
-    - lib/assets/icons/sunny.svg
+    - lib/assets/images/day.jpg
+    - lib/assets/images/night.jpg
+    - lib/assets/images/cloudy-day.png
+    - lib/assets/images/cloudy-night.png
+    - lib/assets/images/sun.png
+    - lib/assets/images/humidity.png
+    - lib/assets/images/barometer.png
+    - lib/assets/images/wind.png
+    - lib/assets/images/sunrise.png
+    - lib/assets/images/sunset.png
+    - lib/assets/images/sand-clock.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
