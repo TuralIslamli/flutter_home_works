@@ -17,7 +17,11 @@ class InfoGrid extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset("lib/assets/images/cloudy-day.png"),
+                getWeatherIcon(
+                    weatherData.weather!.main!,
+                    isDay(weatherData.dt!, weatherData.sys!.sunrise!,
+                        weatherData.sys!.sunset!)),
+                // Image.asset("lib/assets/images/cloudy-day.png"),
                 Text(
                   capitalizeFirstLetter(weatherData.weather!.description!),
                   textAlign: TextAlign.center,

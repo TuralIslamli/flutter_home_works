@@ -10,6 +10,7 @@ Future<LocationData?> getLocation() async {
   serviceEnabled = await location.serviceEnabled();
   if (!serviceEnabled) {
     serviceEnabled = await location.requestService();
+
     if (!serviceEnabled) {
       return null;
     }

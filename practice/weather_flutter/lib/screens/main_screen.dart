@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_flutter/services/weather.dart';
+import 'package:weather_flutter/utils/utils.dart';
 import 'package:weather_flutter/widgets/header_widget.dart';
 import 'package:weather_flutter/widgets/info_grid.dart';
 
@@ -19,9 +20,10 @@ class _MainScreenState extends State<MainScreen> {
           return snapshot.hasData
               ? MaterialApp(
                   debugShowCheckedModeBanner: false,
-                  theme: snapshot.data!.dt! > snapshot.data!.sys!.sunset!
-                      ? ThemeData.dark()
-                      : ThemeData.light(),
+                  theme: isDay(snapshot.data!.dt!, snapshot.data!.sys!.sunrise!,
+                          snapshot.data!.sys!.sunset!)
+                      ? ThemeData.light()
+                      : ThemeData.dark(),
                   title: "Weather app",
                   home: Scaffold(
                       body: Column(
@@ -33,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
                           image: DecorationImage(
                             alignment: Alignment.bottomCenter,
                             image: AssetImage(
-                                "lib/assets/images/${snapshot.data!.dt! > snapshot.data!.sys!.sunset! ? "night.jpg" : "day.jpg"}"),
+                                "lib/assets/images/${isDay(snapshot.data!.dt!, snapshot.data!.sys!.sunrise!, snapshot.data!.sys!.sunset!) ? "day.jpg" : "night.jpg"}"),
                             fit: BoxFit.fill,
                           ),
                         ),

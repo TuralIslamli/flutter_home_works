@@ -13,9 +13,8 @@ class HeaderWidget extends StatelessWidget {
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(
           "${getdate(dt)["formattedDate"]}",
-          style: TextStyle(
+          style:const TextStyle(
             fontSize: 18,
-            // color: Colors.grey[700],
             height: 1.5,
           ),
         ),

@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:weather_flutter/models/weather_model.dart';
 import 'package:dio/dio.dart';
 import 'package:location/location.dart';
